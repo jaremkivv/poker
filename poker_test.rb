@@ -162,14 +162,4 @@ class PokerTest < Minitest::Test
     game = Poker.new([high_of_8_low_of_3, high_of_8_low_of_2])
     assert_equal [high_of_8_low_of_3], game.best_hand
   end
-
-  def test_three_hand_with_tie
-    skip
-    spade_straight_to_9 = %w(9S 8S 7S 6S 5S)
-    diamond_straight_to_9 = %w(9D 8D 7D 6D 5D)
-    three_of_4 = %w(4D 4S 4H QS KS)
-    hands = [spade_straight_to_9, diamond_straight_to_9, three_of_4]
-    game = Poker.new(hands)
-    assert_equal [spade_straight_to_9, diamond_straight_to_9], game.best_hand
-  end
 end

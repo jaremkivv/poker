@@ -1,9 +1,7 @@
 class Poker
   CARDS_ORDER = %w(2 3 4 5 6 7 8 9 10 J Q K A).freeze
 
-
   attr_reader :hands
-
 
 
   def initialize(hands)
@@ -11,17 +9,9 @@ class Poker
   end
 
   def best_hand
-    # return @hands if hands.count == 1
-
-    # a = hands.map(&:to_s)
-    # puts "hands: -- #{a} --"
-    # a = hands.sort.map(&:to_s)
-    # puts "hands.sort: -- #{a} --"
     result = hands.sort!.slice hands.index(hands[-1]) || 0..-1
     result.map(&:to_s)
   end
-
-
 end
 
 class Hand
